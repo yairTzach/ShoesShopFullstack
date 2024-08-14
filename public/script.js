@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify(data)
             });
 
-            const result = await response.json();
-
-            if (response.ok) {
-                alert('Login successful');
+            if (response.redirected) {
+                // Redirect to the new page
+                window.location.href = response.url;
             } else {
+                const result = await response.json();
                 loginError.textContent = result.message;
             }
         } catch (error) {

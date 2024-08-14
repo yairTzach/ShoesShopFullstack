@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        button {
+            cursor: pointer;
+            background-color: #5c67f2;
+            color: white;
+        }
+        #checkoutPanel {
+            width: 80%;
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-item img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .cart-item h4 {
+            display: inline;
+        }
+        .cart-item span {
+            font-weight: bold;
+        }
+        .cart-total {
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <div id="checkoutPanel">
+        <h2>Your Cart</h2>
+        <div id="checkoutCartItems"></div>
+        <div id="checkoutCartTotal"></div>
+        <h2>Payment Information</h2>
+        <form id="paymentForm">
+            <input type="text" id="cardNumber" placeholder="Card Number" required>
+            <input type="text" id="cardName" placeholder="Name on Card" required>
+            <input type="month" id="cardExpiry" placeholder="Expiry Date" required>
+            <input type="text" id="cardCVC" placeholder="CVC" required>
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+
+    <script src="js/checkout.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

@@ -3,70 +3,638 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Authentication</title> 
-    <link rel="stylesheet" href="styles.css">
+    <title>Shoe Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #mainContent {
+            flex: 1;
+            padding-right: 220px; /* Adjust based on the width of the sidebar */
+        }
+        #sidebar {
+            width: 220px; /* Make the sidebar slightly smaller */
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        #sidebar.open {
+            transform: translateX(0);
+        }
+        input, button, select {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        button {
+            cursor: pointer;
+            background-color: #5c67f2;
+            color: white;
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: relative; /* Ensure positioning context for absolute elements */
+        }
+
+        #cartIcon {
+            font-size: 24px;
+            position: relative;
+            cursor: pointer;
+        }
+        #cartCount {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+        }
+        #title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            text-align: center;
+            animation: move 5s infinite;
+            margin: 0 auto;
+        }
+        @keyframes move {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
+        }
+        #showFilters {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            z-index: 20;
+        }
+
+        #userIcon {
+            font-size: 24px;
+            color: #5c67f2;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #userIcon:hover {
+            color: #3c46b5;
+        }
+
+        #productContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 300px; /* Adjust as necessary */
+            margin: 10px;
+            text-align: center;
+        }
+
+        .product .image-container {
+            height: 200px; /* Consistent height for the image container */
+            width: 100%; /* Full width */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            overflow: hidden; /* Hide overflow to keep images contained */
+        }
+
+        .product img {
+            width: 100%; /* Full width */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Ensure image covers the container */
+            display: block;
+        }
+
+        #cartContainer {
+            display: none;
+            margin-top: 20px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: absolute;
+            left: 20px;
+            top: 60px;
+            z-index: 10;
+            width: 300px;
+        }
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-item img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .cart-item h4 {
+            display: inline;
+        }
+        .cart-item span {
+            font-weight: bold;
+        }
+        .cart-item button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: red;
+            font-size: 18px;
+        }
+        .cart-total {
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: right;
+        }
+        .proceed-button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #5c67f2;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        #priceRangeValue {
+            display: inline-block;
+            width: 50px;
+        }
+        .category-button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #5c67f2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+            flex: 1;
+            min-width: 150px; /* Add minimum width */
+            max-width: 150px; /* Add maximum width to keep buttons consistent */
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
+        }
+        .category-button.active {
+            background-color: #3c46b5;
+        }
+        .filter-button {
+            width: 100%;
+        }
+        .brand-button {
+            cursor: pointer;
+            margin: 5px 0;
+            background: none;
+            border: none;
+            text-align: left;
+            width: 100%;
+            font-size: 16px;
+            padding: 5px;
+            color: #333;
+        }
+        .brand-button:hover {
+            background-color: #f0f0f0;
+        }
+        #availableBrandsToggle {
+            cursor: pointer;
+            text-align: center;
+            padding: 10px;
+            background-color: #5c67f2;
+            color: white;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        #availableBrands {
+            display: none;
+            margin-top: 10px;
+        }
+        #categoryContainer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px; /* Add gap between buttons */
+            margin-top: 20px; /* Adjust top margin */
+        }
+        #filtersClose {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+        }
+        #filtersClose.open {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <div class="login-wrap">
-        <div class="login-html">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
-            <label for="tab-1" class="tab">Sign In</label>
-            <input id="tab-2" type="radio" name="tab" class="sign-up">
-            <label for="tab-2" class="tab">Sign Up</label>
-            <div class="login-form">
-                <!-- Sign In Form -->
-                <form id="login-form" class="sign-in-htm">
-                    <div class="group">
-                        <label for="user-login" class="label">Username</label>
-                        <input id="user-login" name="username" type="text" class="input" required>
-                    </div>
-                    <div class="group">
-                        <label for="pass-login" class="label">Password</label>
-                        <input id="pass-login" name="password" type="password" class="input" required>
-                    </div>
-                    <div class="group">
-                        <input id="check" type="checkbox" class="check" checked>
-                        <label for="check"><span class="icon"></span> Remember me</label>
-                    </div>
-                    <div class="group">
-                        <input type="submit" class="button" value="Sign In">
-                    </div>
-                    <div id="login-error" class="error"></div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <a href="#forgot">Forgot Password?</a>
-                    </div>
-                </form>
-                <!-- Sign Up Form -->
-                <form id="register-form" class="sign-up-htm">
-                    <div class="group">
-                        <label for="user-register" class="label">Username</label>
-                        <input id="user-register" name="username" type="text" class="input" required>
-                    </div>
-                    <div class="group">
-                        <label for="pass-register" class="label">Password</label>
-                        <input id="pass-register" name="password" type="password" class="input" required>
-                    </div>
-                    <div class="group">
-                        <label for="repeat-pass-register" class="label">Repeat Password</label>
-                        <input id="repeat-pass-register" name="repeatPassword" type="password" class="input" required>
-                    </div>
-                    <div class="group">
-                        <label for="email-register" class="label">Email Address</label>
-                        <input id="email-register" name="email" type="email" class="input" required>
-                    </div>
-                    <div class="group">
-                        <input type="submit" class="button" value="Sign Up">
-                    </div>
-                    <div id="register-error" class="error"></div>
-                    <div class="hr"></div>
-                    <div class="foot-lnk">
-                        <label for="tab-1">Already a Member?</label>
-                    </div>
-                </form>
-            </div>
+    <div id="header">
+        <div id="cartIcon" class="fas fa-shopping-cart">
+            <div id="cartCount">0</div>
+        </div>
+        <h1 id="title">SHOE SHOP</h1>
+        <div id="showFilters" class="fas fa-bars">
+            <a href="profile.html" id="userIcon" class="fas fa-user"></a> <!-- User icon linked directly to profile page -->
         </div>
     </div>
-    <script src="script.js"></script>
+    <div id="mainContent">
+        <div id="categoryContainer">
+            <button class="category-button" data-category="on sale">On Sale</button>
+            <button class="category-button" data-category="babys">Babys</button>
+            <button class="category-button" data-category="woman">Woman</button>
+            <button class="category-button" data-category="man">Man</button>
+        </div>
+        <div id="productContainer"></div>
+    </div>
+    <div id="sidebar">
+        <h2>Filters</h2>
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <input type="range" id="priceRange" min="0" max="999" value="999" oninput="updatePriceValue()">
+        <span id="priceRangeValue">999</span>
+        <button class="filter-button" id="searchAllButton">Search All</button>
+        <button class="filter-button" id="searchByBrandButton">Search by Brand</button>
+        <button class="filter-button" data-category="sports">Sports</button>
+        <select id="sizeFilter">
+            <option value="">All Sizes</option>
+        </select>
+        <div id="availableBrandsToggle">Available Brands</div>
+        <div id="availableBrands"></div>
+        <div id="filtersClose" class="fas fa-times"></div>
+    </div>
+    <div id="cartContainer">
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        <div id="cartTotal"></div>
+        <a href="cart.html" id="viewCartButton" class="proceed-button">View Cart</a> <!-- Changed to View Cart -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchProducts();
+            fetchBrands();
+
+            document.body.addEventListener('click', function(event) {
+                if (event.target.matches('.category-button')) {
+                    fetchProductsByCategory(event.target.dataset.category, event.target);
+                } else if (event.target.matches('.filter-button')) {
+                    if (event.target.dataset.category) {
+                        fetchProductsByCategory(event.target.dataset.category, event.target);
+                    } else {
+                        fetchProducts();
+                    }
+                } else if (event.target.matches('.brand-button')) {
+                    fetchProductsByBrand(event.target.dataset.brand);
+                } else if (event.target.matches('.remove-button')) {
+                    removeFromCart(event.target.dataset.id);
+                } else if (event.target.matches('.add-to-cart-button')) {
+                    addToCart(event.target.dataset.id);
+                }
+            });
+
+            document.getElementById('cartIcon').addEventListener('click', () => {
+                cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
+            });
+
+            document.getElementById('showFilters').addEventListener('click', () => {
+                sidebar.classList.add('open');
+                showFilters.style.display = 'none';
+                filtersClose.style.display = 'block';
+            });
+
+            document.getElementById('filtersClose').addEventListener('click', () => {
+                sidebar.classList.remove('open');
+                showFilters.style.display = 'block';
+                filtersClose.style.display = 'none';
+            });
+
+            document.getElementById('availableBrandsToggle').addEventListener('click', () => {
+                availableBrands.style.display = availableBrands.style.display === 'none' ? 'block' : 'none';
+            });
+
+            searchInput.addEventListener('keyup', function(event) {
+                if (event.key === "Enter") {
+                    fetchProducts();
+                }
+            });
+
+            priceRange.addEventListener('input', function(event) {
+                fetchProducts();
+            });
+
+            document.getElementById('sizeFilter').addEventListener('change', () => {
+                fetchProducts();
+            });
+
+            document.getElementById('viewCartButton').addEventListener('click', function(event) { // Updated to use viewCartButton
+                event.preventDefault();
+                window.location.href = 'cart.html';
+            });
+
+            // Populate the size filter options dynamically
+            const sizeFilter = document.getElementById('sizeFilter');
+            const sizes = Array.from({ length: 25 }, (_, i) => 36 + i * 0.5);
+
+            sizes.forEach(size => {
+                const option = document.createElement('option');
+                option.value = size;
+                option.textContent = size;
+                sizeFilter.appendChild(option);
+            });
+        });
+
+        const searchInput = document.getElementById('searchInput');
+        const priceRange = document.getElementById('priceRange');
+        const priceRangeValue = document.getElementById('priceRangeValue');
+        const productContainer = document.getElementById('productContainer');
+        const cartContainer = document.getElementById('cartContainer');
+        const cartItemsContainer = document.getElementById('cartItems');
+        const cartTotalContainer = document.getElementById('cartTotal');
+        const cartIcon = document.getElementById('cartIcon');
+        const cartCount = document.getElementById('cartCount');
+        const availableBrands = document.getElementById('availableBrands');
+        const availableBrandsToggle = document.getElementById('availableBrandsToggle');
+        const sidebar = document.getElementById('sidebar');
+        const showFilters = document.getElementById('showFilters');
+        const filtersClose = document.getElementById('filtersClose');
+        const cart = {};
+        let activeCategoryButton = null;
+
+        function updatePriceValue() {
+            priceRangeValue.textContent = priceRange.value;
+        }
+
+        function fetchProducts() {
+            const searchQuery = searchInput.value;
+            const maxPrice = priceRange.value;
+            const selectedSize = document.getElementById('sizeFilter').value;
+            const query = `search=${encodeURIComponent(searchQuery)}&maxPrice=${maxPrice}` + (selectedSize ? `&size=${selectedSize}` : '');
+            
+            fetch(`http://localhost:3000/api/products?${query}`)
+                .then(response => response.json())
+                .then(products => {
+                    productContainer.innerHTML = ''; // Clear previous results
+                    products.forEach(product => {
+                        const productDiv = document.createElement('div');
+                        productDiv.className = 'product';
+                        productDiv.innerHTML = `
+                            <div class="image-container">
+                                <img src="${product.image}" alt="Image of ${product.brand} ${product.model}" />
+                            </div>
+                            <h3>${product.brand} - ${product.model}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price}</p>
+                            <select class="size-select" data-id="${product.id}">
+                                ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+                            </select>
+                            <button class="add-to-cart-button" data-id="${product.id}">Add to Cart</button>
+                        `;
+                        productContainer.appendChild(productDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching products:', error);
+                });
+        }
+
+        function fetchProductsByType(type) {
+            const searchQuery = searchInput.value;
+            const maxPrice = priceRange.value;
+            const selectedSize = document.getElementById('sizeFilter').value;
+            const query = `search=${encodeURIComponent(searchQuery)}&maxPrice=${maxPrice}&type=${type}` + (selectedSize ? `&size=${selectedSize}` : '');
+            
+            fetch(`http://localhost:3000/api/products?${query}`)
+                .then(response => response.json())
+                .then(products => {
+                    productContainer.innerHTML = ''; // Clear previous results
+                    products.forEach(product => {
+                        const productDiv = document.createElement('div');
+                        productDiv.className = 'product';
+                        productDiv.innerHTML = `
+                            <div class="image-container">
+                                <img src="${product.image}" alt="Image of ${product.brand} ${product.model}" />
+                            </div>
+                            <h3>${product.brand} - ${product.model}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price}</p>
+                            <select class="size-select" data-id="${product.id}">
+                                ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+                            </select>
+                            <button class="add-to-cart-button" data-id="${product.id}">Add to Cart</button>
+                        `;
+                        productContainer.appendChild(productDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching products:', error);
+                });
+        }
+
+        function fetchProductsByCategory(category, button) {
+            if (activeCategoryButton === button) {
+                activeCategoryButton.classList.remove('active');
+                activeCategoryButton = null;
+                fetchProducts();
+                return;
+            }
+            if (activeCategoryButton) {
+                activeCategoryButton.classList.remove('active');
+            }
+            button.classList.add('active');
+            activeCategoryButton = button;
+            const selectedSize = document.getElementById('sizeFilter').value;
+            const query = `category=${category}` + (selectedSize ? `&size=${selectedSize}` : '');
+            fetch(`http://localhost:3000/api/products?${query}`)
+                .then(response => response.json())
+                .then(products => {
+                    productContainer.innerHTML = ''; // Clear previous results
+                    products.forEach(product => {
+                        const productDiv = document.createElement('div');
+                        productDiv.className = 'product';
+                        productDiv.innerHTML = `
+                            <div class="image-container">
+                                <img src="${product.image}" alt="Image of ${product.brand} ${product.model}" />
+                            </div>
+                            <h3>${product.brand} - ${product.model}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price}</p>
+                            <select class="size-select" data-id="${product.id}">
+                                ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+                            </select>
+                            <button class="add-to-cart-button" data-id="${product.id}">Add to Cart</button>
+                        `;
+                        productContainer.appendChild(productDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching products:', error);
+                });
+        }
+
+        function fetchProductsByBrand(brand) {
+            const selectedSize = document.getElementById('sizeFilter').value;
+            const query = `brand=${encodeURIComponent(brand)}` + (selectedSize ? `&size=${selectedSize}` : '');
+            fetch(`http://localhost:3000/api/products?${query}`)
+                .then(response => response.json())
+                .then(products => {
+                    productContainer.innerHTML = ''; // Clear previous results
+                    products.forEach(product => {
+                        const productDiv = document.createElement('div');
+                        productDiv.className = 'product';
+                        productDiv.innerHTML = `
+                            <div class="image-container">
+                                <img src="${product.image}" alt="Image of ${product.brand} ${product.model}" />
+                            </div>
+                            <h3>${product.brand} - ${product.model}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price}</p>
+                            <select class="size-select" data-id="${product.id}">
+                                ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+                            </select>
+                            <button class="add-to-cart-button" data-id="${product.id}">Add to Cart</button>
+                        `;
+                        productContainer.appendChild(productDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching products:', error);
+                });
+        }
+
+        function fetchBrands() {
+            fetch('http://localhost:3000/api/brands')
+                .then(response => response.json())
+                .then(brands => {
+                    availableBrands.innerHTML = ''; // Clear previous brands
+                    for (const brand in brands) {
+                        const brandDiv = document.createElement('button');
+                        brandDiv.className = 'brand-button';
+                        brandDiv.dataset.brand = brand;
+                        brandDiv.innerHTML = `${brand}: ${brands[brand]}`;
+                        availableBrands.appendChild(brandDiv);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching brands:', error);
+                });
+        }
+
+        function addToCart(productId) {
+            fetch(`http://localhost:3000/api/products`)
+                .then(response => response.json())
+                .then(products => {
+                    const product = products.find(product => product.id === parseInt(productId));
+                    if (product) {
+                        const selectedSize = document.querySelector(`.size-select[data-id="${productId}"]`).value;
+                        if (!selectedSize) {
+                            alert('Please select a size.');
+                            return;
+                        }
+                        if (cart[productId]) {
+                            if (cart[productId].sizes[selectedSize]) {
+                                cart[productId].sizes[selectedSize]++;
+                            } else {
+                                cart[productId].sizes[selectedSize] = 1;
+                            }
+                        } else {
+                            cart[productId] = { ...product, sizes: { [selectedSize]: 1 } };
+                        }
+                        updateCart();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error adding to cart:', error);
+                });
+        }
+
+        function removeFromCart(productId) {
+            const selectedSize = document.querySelector(`.size-select[data-id="${productId}"]`).value;
+            if (cart[productId] && cart[productId].sizes[selectedSize]) {
+                if (cart[productId].sizes[selectedSize] > 1) {
+                    cart[productId].sizes[selectedSize]--;
+                } else {
+                    delete cart[productId].sizes[selectedSize];
+                    if (Object.keys(cart[productId].sizes).length === 0) {
+                        delete cart[productId];
+                    }
+                }
+                updateCart();
+            }
+        }
+
+        function updateCart() {
+            cartItemsContainer.innerHTML = ''; // Clear previous cart items
+            let totalPrice = 0;
+            let itemCount = 0;
+            for (const productId in cart) {
+                const item = cart[productId];
+                for (const size in item.sizes) {
+                    totalPrice += item.price * item.sizes[size];
+                    itemCount += item.sizes[size];
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="Image of ${item.brand} ${item.model}" />
+                        <div>
+                            <h4>${item.brand} - ${item.model}</h4>
+                            <p>Size: ${size}</p>
+                            <span>x${item.sizes[size]}</span>
+                            <p>Price: $${item.price}</p>
+                        </div>
+                        <button class="remove-button" data-id="${item.id}">&times;</button>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                }
+            }
+            cartTotalContainer.innerHTML = `<p class="cart-total">Total Price: $${totalPrice.toFixed(2)}</p>`;
+            cartCount.innerText = itemCount;
+            if (itemCount === 0) {
+                cartTotalContainer.innerHTML = `<p class="cart-total">Empty Cart</p>`;
+                document.querySelector('.proceed-button').style.display = 'none';
+            } else {
+                document.querySelector('.proceed-button').style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>

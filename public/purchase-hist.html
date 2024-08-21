@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .purchase-item {
+            margin-top: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .purchase-item img {
+            width: 100px; /* Adjust the width of the image */
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .order-info {
+            flex-grow: 1;
+        }
+
+        .leave-review-button {
+            background-color: #5c67f2;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #homeButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .rating-container {
+            display: none; /* Hide rating stars */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Home Button -->
+    <a id="homeButton" href="index.html">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <h2>My Purchase History:</h2>
+    <div id="purchaseHistory"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const purchaseHistoryContainer = document.getElementById('purchaseHistory');
+
+            // Function to get cookie value by name
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+
+            // Get the purchaseHistory cookie
+            const purchaseHistoryCookie = getCookie('purchaseHistory');
+            if (purchaseHistoryCookie) {
+                // Decode the URL-encoded cookie value
+                const decodedCookieValue = decodeURIComponent(purchaseHistoryCookie);
+                
+                try {
+                    const purchaseHistory = JSON.parse(decodedCookieValue);
+
+                    // Display the purchase history on the page
+                    purchaseHistory.forEach(purchase => {
+                        const purchaseItem = document.createElement('div');
+                        purchaseItem.className = 'purchase-item';
+                        purchaseItem.innerHTML = `
+                            <img src="${purchase.image}" alt="${purchase.name}">
+                            <div class="order-info">
+                                <h3>${purchase.name}</h3>
+                                <p>Order Number: ${purchase._id}</p>
+                                <p>Date: ${new Date(purchase.purchaseDate).toLocaleDateString()}</p>
+                                <p>Price: $${purchase.price}</p>
+                                <p>Quantity: ${purchase.quantity}</p>
+                            </div>
+                            <button class="leave-review-button" onclick="window.location.href='review.html'">Leave a Review</button>
+                        `;
+                        purchaseHistoryContainer.appendChild(purchaseItem);
+                    });
+                } catch (error) {
+                    console.error('Error parsing purchase history:', error);
+                }
+            } else {
+                purchaseHistoryContainer.innerHTML = '<p>No purchase history found.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

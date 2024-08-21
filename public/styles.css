@@ -2,8 +2,9 @@
 
 body {
     margin: 0;
-    color: #6a6f8c;
-    background: #c8c8c8;
+    color: rgb(81, 81, 194);
+    padding-top: 20px; /* Add this line to create space at the top */
+    background: #dee4e5;
     font: 600 16px/18px "Open Sans", sans-serif;
     font-family: Arial, sans-serif;
     display: flex;
@@ -33,8 +34,8 @@ a {
 .login-wrap {
     width: 100%;
     margin: auto;
-    max-width: 525px;
-    min-height: 670px;
+    max-width: 900px;
+    min-height: 780px;
     position: relative;
     background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -124,6 +125,7 @@ a {
 .login-form .group .button:hover {
     background: #1454c4;
     cursor: pointer;
+    transform: scale(1.1); /* Slightly enlarge the icon on hover for better interaction */
 }
 
 .login-form .group label .icon {
@@ -343,4 +345,183 @@ button {
 #totalPrice {
     font-weight: bold;
     margin-top: 10px;
+}
+
+#showFilters {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 20;
+    gap: 10px;  /* Ensures consistent spacing between icons */
+    padding: 5px;  /* Adds padding for better clickability and visual spacing */
+    background: #dee4e5;  /* Optional: adds a background color to the icon bar */
+    border-radius: 5px;  /* Optional: rounds the corners of the icon bar */
+}
+
+#showFilters a {
+    color: #5c67f2;  /* Primary icon color */
+    transition: color 0.3s ease;  /* Smooth transition for color change */
+}
+
+#showFilters a:hover {
+    color: #3c46b5;  /* Darker color on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover for better interaction */
+}
+
+
+#userIcon {
+    font-size: 24px;
+    color: #5c67f2;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#userIcon:hover {
+    color: #3c46b5;
+    transform: scale(1.1); /* Slightly enlarge the icon on hover for better interaction */
+}
+
+.cart-item img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.cart-item h4 {
+    display: inline;
+}
+
+.cart-item span {
+    font-weight: bold;
+}
+
+.cart-item button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+}
+
+.cart-total {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.proceed-button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #5c67f2;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#priceRangeValue {
+    display: inline-block;
+    width: 50px;
+}
+
+.category-button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    flex: 1;
+    min-width: 150px; /* Add minimum width */
+    max-width: 150px; /* Add maximum width to keep buttons consistent */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.category-button.active {
+    background-color: #3c46b5;
+}
+
+.filter-button {
+    width: 100%;
+}
+
+.brand-button {
+    cursor: pointer;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+    color: #333;
+}
+
+.brand-button:hover {
+    background-color: #f0f0f0;
+}
+
+#availableBrandsToggle {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    background-color: #5c67f2;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#availableBrands {
+    display: none;
+    margin-top: 10px;
+}
+
+#categoryContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px; /* Add gap between buttons */
+    margin-top: 20px; /* Adjust top margin */
+}
+
+#filtersClose {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+#filtersClose.open {
+    display: block;
+}
+
+#purchaseHistoryIcon {
+    color: #5c67f2;  /* Adjust color to fit your site’s theme */
+    margin-left: 10px; /* Ensure it has some space from adjacent icons */
+    cursor: pointer;
+}
+
+#purchaseHistoryIcon:hover {
+    color: #3c46b5; /* Darker shade for hover effect */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover for better interaction */
+}
+
+#homeButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #333; /* Set the icon color to black */
+    cursor: pointer;
 }

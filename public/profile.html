@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +58,7 @@
             border: none;
         }
 
-        #saveButton {
+        #saveButton, #changePasswordButton {
             padding: 10px;
             border-radius: 5px;
             border: none;
@@ -67,36 +66,10 @@
             color: white;
             cursor: pointer;
             margin-top: 10px;
+        }
+
+        #saveButton {
             display: none; /* Hide by default */
-        }
-
-        .purchase-item {
-            margin-top: 20px;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .purchase-item img {
-            width: 60px;
-            height: auto;
-            margin-right: 10px;
-        }
-
-        .order-info {
-            flex-grow: 1;
-        }
-
-        .leave-review-button {
-            background-color: #5c67f2;
-            border: none;
-            color: white;
-            padding: 8px 16px;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
         }
 
         #homeButton {
@@ -115,6 +88,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <script src="/js/profile.js"></script>
+
     <!-- Home icon that links to index.html -->
     <a id="homeButton" href="index.html">
         <i class="fas fa-home"></i>
@@ -122,6 +97,13 @@
     <h1>User Profile</h1>
     <div id="profilePanel">
         <h2>My Information:</h2>
+        <div class="profile-info">
+            <div>
+                <label>Username:</label>
+                <input type="text" id="username" disabled value="JohnDoe">
+            </div>
+            <i class="fas fa-pen edit-icon" onclick="toggleEdit('username')"></i>
+        </div>
         <div class="profile-info">
             <div>
                 <label>Email:</label>
@@ -143,34 +125,30 @@
             </div>
             <i class="fas fa-pen edit-icon" onclick="toggleEdit('phoneNumber')"></i>
         </div>
-        <button id="saveButton" onclick="saveProfile()">Save Changes</button>
 
-        <h2>My Purchase History:</h2>
-        <div id="purchaseHistory">
-            <div class="purchase-item">
-                <img src="images/shoe1.png" alt="Nike Air Force 1">
-                <div class="order-info">
-                    <h3>Nike Air Force 1</h3>
-                    <p>Order Number: 0000001</p>
-                    <p>Date: 12/06/2024</p>
-                    <p>Price: $100</p>
-                </div>
-                <button class="leave-review-button" onclick="window.location.href='review.html'">Leave a Review</button>
+        <!-- Password change fields -->
+        <div class="profile-info">
+            <div>
+                <label>Current Password:</label>
+                <input type="password" id="currentPassword">
             </div>
-            <div class="purchase-item">
-                <img src="images/shoe2.png" alt="Adidas Ultraboost">
-                <div class="order-info">
-                    <h3>Adidas Ultraboost</h3>
-                    <p>Order Number: 0000002</p>
-                    <p>Date: 01/07/2024</p>
-                    <p>Price: $180</p>
-                </div>
-                <button class="leave-review-button" onclick="window.location.href='review.html'">Leave a Review</button>
-            </div>
-            <!-- Add more purchase items here as needed -->
         </div>
-    </div>
+        <div class="profile-info">
+            <div>
+                <label>New Password:</label>
+                <input type="password" id="newPassword">
+            </div>
+        </div>
+        <div class="profile-info">
+            <div>
+                <label>Confirm New Password:</label>
+                <input type="password" id="confirmNewPassword">
+            </div>
+        </div>
+        <button id="changePasswordButton" onclick="changePassword()">Change Password</button>
 
+        <button id="saveButton" onclick="saveProfile()">Save Changes</button>
+    </div>
     <script src="js/profile.js"></script>
 </body>
 </html>

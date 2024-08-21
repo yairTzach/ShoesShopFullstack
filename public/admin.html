@@ -1,10 +1,11 @@
-<!-- admin.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -64,9 +65,24 @@
         .hidden {
             display: none;
         }
+
+        #homeButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #333; /* Set the icon color to black */
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Home Button -->
+    <a id="homeButton" href="index.html">
+        <i class="fas fa-home"></i>
+    </a>
+
     <h1>Admin Management</h1>
     <div id="adminPanel">
         <h2>Add New Product</h2>
@@ -98,6 +114,6 @@
         </form>
     </div>
 
-    <script src="admin.js"></script>
+    <script src="/js/admin.js"></script>
 </body>
 </html>

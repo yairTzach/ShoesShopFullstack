@@ -1,30 +1,43 @@
-const User = require("../../models/User");
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log('profile.js is loaded and running');
 
     // Load user profile data
     loadUserProfile();
-
-    // Load purchase history with a manual order added
-    loadPurchaseHistory();
 });
 
 function loadUserProfile() {
-    const userProfile = {
-        email: User.email,
-        address: '123 Main St',
-        phoneNumber: '555-1234'
-    };
+    const username = getCookie('username');
+    console.log("Username from cookie:", username);
 
-    document.getElementById('email').value = userProfile.email;
-    document.getElementById('address').value = userProfile.address;
-    document.getElementById('phoneNumber').value = userProfile.phoneNumber;
+    if (username) {
+        fetch(`/api/user-profile?username=${username}`)
+            .then(response => response.json())
+            .then(userProfile => {
+                document.getElementById('username').value = userProfile.username;
+                document.getElementById('email').value = userProfile.email;
+                document.getElementById('address').value = userProfile.address || 'Update your address';
+                document.getElementById('phoneNumber').value = userProfile.phoneNumber || 'Update your phone number';
+            })
+            .catch(error => {
+                console.error('Error loading user profile:', error);
+                if (error.message === 'User not found') {
+                    alert('User not found. Please log in again.');
+                    window.location.href = '/login.html';
+                } else {
+                    alert('An error occurred while loading the user profile.');
+                }
+            });
+    } else {
+        alert('User not logged in');
+        window.location.href = '/login.html';
+    }
 }
 
 function toggleEdit(fieldId) {
     const inputField = document.getElementById(fieldId);
     inputField.disabled = !inputField.disabled;
+
+    // If the field is enabled (edit mode), focus on it
     if (!inputField.disabled) {
         inputField.focus();
         document.getElementById('saveButton').style.display = 'block';
@@ -32,46 +45,137 @@ function toggleEdit(fieldId) {
 }
 
 function saveProfile() {
-    const email = document.getElementById('email').value;
+    const oldUsername = getCookie('username'); 
+    const newUsername = document.getElementById('username').value;
+
+    const oldEmail = getCookie('email');
+    const newEmail = document.getElementById('email').value;
+
     const address = document.getElementById('address').value;
     const phoneNumber = document.getElementById('phoneNumber').value;
 
-    console.log('Profile updated with:', { email, address, phoneNumber });
-    alert('Profile updated successfully!');
+    let updateUsernamePromise = Promise.resolve();
+    let updateEmailPromise = Promise.resolve();
 
+    // Update username only if it has changed
+    if (oldUsername !== newUsername) {
+        updateUsernamePromise = fetch('/api/update-username', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ oldUsername, newUsername })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === 'Username updated successfully') {
+                setCookie('username', newUsername, 7);
+            } else {
+                throw new Error(data.message);
+            }
+        });
+    }
+
+    // Update email only if it has changed
+    if (oldEmail !== newEmail) {
+        updateEmailPromise = updateUsernamePromise.then(() => {
+            return fetch('/api/update-email', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: newUsername, newEmail })
+            });
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message === 'Email updated successfully' || data.message === 'Email remains the same, no update necessary.') {
+                setCookie('email', newEmail, 7);
+            } else if (data.message === 'Email already exists') {
+                throw new Error('This email is already associated with another account. Please use a different email.');
+            } else {
+                throw new Error(data.message);
+            }
+        });
+    }
+
+    // Update address and phone number only after username and email updates are resolved
+    Promise.all([updateUsernamePromise, updateEmailPromise])
+    .then(() => {
+        if (oldUsername === newUsername && oldEmail === newEmail) {
+            return; // No need to update the profile if neither username nor email changed
+        }
+        
+        return fetch('/api/update-profile', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: newUsername, address, phoneNumber })
+        });
+    })
+    .then(response => response ? response.json() : { message: 'Profile updated successfully' })
+    .then(data => {
+        if (data.message === 'Profile updated successfully') {
+            alert('Profile updated successfully!');
+        } else if (data.message) {
+            throw new Error(data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error updating profile:', error);
+        alert(error.message);
+    });
+
+    // Disable input fields after saving
     document.getElementById('email').disabled = true;
     document.getElementById('address').disabled = true;
     document.getElementById('phoneNumber').disabled = true;
 
+    // Hide the save button
     document.getElementById('saveButton').style.display = 'none';
 }
+function changePassword() {
+    const currentPassword = document.getElementById('currentPassword').value;
+    const newPassword = document.getElementById('newPassword').value;
+    const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+    const username = getCookie('username');
 
-function loadPurchaseHistory() {
-    const purchaseHistory = [
-        { id: 1, name: 'Nike Air Force 1', image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-rWtqPn.png' },
-        { id: 2, name: 'Adidas Ultraboost', image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f5373115e0784e498914b402b059200d_9366/Ultraboost_1.0_Shoes_Grey_ID9674_01_standard.jpg' },
-        { id: 3, name: 'Converse Chuck Taylor', image: 'https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dw3931bb17/images/a_107/M9160_A_107X1.jpg?sw=964' },
-        { id: 4, name: 'Puma Suede Classic', image: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_900,h_900/global/374915/01/sv01/fnd/PNA/fmt/png/Suede-Classic-XXI-Sneakers' } // Manual order added for testing
-    ];
+    if (newPassword !== confirmNewPassword) {
+        alert('New password and confirmation do not match!');
+        return;
+    }
 
-    const purchaseHistoryContainer = document.getElementById('purchaseHistory');
-    purchaseHistoryContainer.innerHTML = '';
-
-    purchaseHistory.forEach(purchase => {
-        const purchaseItem = document.createElement('div');
-        purchaseItem.className = 'purchase-item';
-        purchaseItem.innerHTML = `
-            <div style="display: flex; align-items: center;">
-                <img src="${purchase.image}" alt="${purchase.name}" style="width: 100px; margin-right: 20px;">
-                <h3>${purchase.name}</h3>
-            </div>
-            <button class="leave-review-button" onclick="goToReviewPage(${purchase.id})" style="background-color: black; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Leave a Review</button>
-        `;
-        purchaseHistoryContainer.appendChild(purchaseItem);
+    fetch('/api/update-password', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, currentPassword, newPassword })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'Password updated successfully') {
+            alert('Password updated successfully!');
+            document.getElementById('currentPassword').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmNewPassword').value = '';
+        } else {
+            throw new Error(data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error updating password:', error);
+        alert(error.message);
     });
 }
 
-function goToReviewPage(purchaseId) {
-    // Redirect to the review page with the specific purchase ID
-    window.location.href = `review.html?purchaseId=${purchaseId}`;
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Convert days to milliseconds
+    const expires = "; expires=" + date.toUTCString();
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }

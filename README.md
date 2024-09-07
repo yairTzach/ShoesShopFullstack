@@ -1,7 +1,7 @@
 # Shoe Shop: E-Commerce Platform
 
 ## Main Page
-**URL:** http://localhost:3000/html/main.html
+**URL:** `http://localhost:3000/html/main.html`
 
 ## Project Overview
 Shoe Shop is a full-featured e-commerce platform built using Node.js and Express.js, allowing users to browse, search, and purchase shoes. The platform provides user authentication, product reviews, personalized recommendations, and secure data handling using both MongoDB and a file system. This application includes various functionalities such as user registration, profile management, shopping cart, purchase history, and an admin panel for product and review management. It leverages MongoDB for dynamic data storage while also utilizing file system management for data backup and other storage needs.
@@ -17,7 +17,7 @@ Shoe Shop is a full-featured e-commerce platform built using Node.js and Express
 - **Admin Panel:** Admins can manage products, including adding, updating, and removing them, and can also remove user reviews.
 
 ## Project Structure
-plaintext
+```plaintext
 shoeshop/
 ├── models/                 
 │   ├── Product.js           

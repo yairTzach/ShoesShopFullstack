@@ -105,11 +105,11 @@ shoeshop/
 ```
 ## Installation & Setup
 
-### Prerequisites
+## Prerequisites
 - **Node.js:** Ensure Node.js is installed on your machine.
 - **MongoDB:** Install MongoDB on your machine.
 
-### Step 1: Prepare the Project Directory
+## Step 1: Prepare the Project Directory
 1. Download the provided zip file containing the project to your computer.
 2. Locate the downloaded zip file and right-click on it to extract its contents. This will create a folder with all the project files.
 3. Open your terminal application (on Windows, you can use Command Prompt or PowerShell; on macOS and Linux, you can use the Terminal app).

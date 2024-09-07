@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #dee4e5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Main Container with Black Card Background */
+  #thankyouContainer {
+    background-color: #333; /* Black card background */
+    color: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Title Styling */
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f4f4f4;
+  }
+  
+  /* Shoe Image Styling */
+  .shoe-image {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover Effect */
+  .shoe-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Rating Stars */
+  .stars {
+    font-size: 24px;
+    color: #f4c10f;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  /* Rating Text */
+  .rating-text {
+    font-size: 18px;
+    color: #ccc;
+    margin-top: 10px;
+  }
+  
+  /* Enhanced Rating Description */
+  .rating-description {
+    font-size: 18px; /* Larger font size for emphasis */
+    margin-bottom: 20px;
+    color: white; /* White text for contrast */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow for readability */
+  }
+  
+  /* Return Button Styling */
+  .return-button {
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .return-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+  }
+  

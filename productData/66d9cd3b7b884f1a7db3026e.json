@@ -1,0 +1,19 @@
+{
+  "_id": "66d9cd3b7b884f1a7db3026e",
+  "brand": "new balance",
+  "model": "530",
+  "description": "good shoes",
+  "price": 110,
+  "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/z/8/z895470008-11684057605.jpg",
+  "categories": [
+    "Sports"
+  ],
+  "sizes": [
+    {
+      "size": "44",
+      "amount": 2,
+      "_id": "66d9cd4c7b884f1a7db30291"
+    }
+  ],
+  "__v": 0
+}

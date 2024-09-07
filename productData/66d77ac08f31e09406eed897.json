@@ -1,0 +1,20 @@
+{
+  "brand": "Adidas",
+  "model": "Superstar",
+  "description": "The Adidas Superstar is a timeless classic with a sleek design and durable construction.",
+  "price": 85,
+  "image": "https://is4.revolveassets.com/images/p4/n/z/ADIO-MZ65_V1.jpg",
+  "categories": [
+    "Casual",
+    "Men"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 0,
+      "_id": "66d77ac08f31e09406eed898"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed897",
+  "__v": 0
+}

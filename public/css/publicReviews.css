@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    margin: 0;
+    color: rgb(81, 81, 194);
+    background: #dee4e5;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#filterSection {
+    display: flex;
+    margin: 20px 0;
+    gap: 10px;
+    align-items: center; /* Center the elements vertically */
+}
+
+#searchInput {
+    padding: 8px; /* Adjust padding for a balanced look */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    flex: 2; /* Increase the flex value to make the input wider */
+    background-color: #fff;
+    color: black;
+    width: 250px; /* Set a fixed width for consistency */
+}
+
+#searchButton {
+    padding: 8px 20px; /* Adjust padding to reduce button size */
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex: 0; /* Remove flex-grow to prevent it from stretching */
+}
+
+
+#searchButton:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Reviews Container and Items */
+#reviewsContainer {
+    width: 90%;
+    max-width: 1400px;
+    background: #333;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    color: white;
+}
+
+.submitReview-item {
+    background: #444;
+    color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #555;
+}
+
+.submitReview-item h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #eee;
+}
+
+.submitReview-item p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+/* Navbar Styles */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    gap: 40px;
+    position: relative;
+}
+.header-link {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.header-link:hover {
+    color: #aaa;
+}
+
+
+.navbar-icon {
+    width: 20px;
+    height: auto;
+    margin: 0 10px;
+    vertical-align: middle;
+    display: inline-block;
+    color: white;
+}
+
+#cartIcon {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#cartCount {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1; /* Ensure the text is vertically centered */
+}
+
+#cartContainer {
+    display: none; /* Ensure the cart starts hidden */
+    margin-top: 20px;
+    background: #fff; /* White background */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    z-index: 10; /* Corrected from z-main to z-index */
+    width: 300px;
+}
+
+
+
+
+

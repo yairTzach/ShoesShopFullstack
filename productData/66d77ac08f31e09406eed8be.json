@@ -1,0 +1,20 @@
+{
+  "brand": "Adidas",
+  "model": "NMD_R1",
+  "description": "The Adidas NMD_R1 is a modern sneaker that blends retro and futuristic design elements.",
+  "price": 140,
+  "image": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/0fd9bc2bfc234ce0b69aaef900fddbdf_9366/HQ4452_01_standard.jpg",
+  "categories": [
+    "Fashion",
+    "Women"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 0,
+      "_id": "66d77ac08f31e09406eed8bf"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed8be",
+  "__v": 0
+}

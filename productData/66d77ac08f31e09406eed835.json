@@ -1,0 +1,50 @@
+{
+  "brand": "Under Armour",
+  "model": "Curry 7",
+  "description": "The Under Armour Curry 7 delivers responsiveness and support for fast-paced play.",
+  "price": 140,
+  "image": "https://i5.walmartimages.com/seo/Under-Armour-Men-s-Team-Curry-7-Basketball-Shoes_336d6726-747c-4721-a37b-a9b6de93685f.11e3e1824102c7d5d6d1e6a31ee73d37.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+  "categories": [
+    "Basketball",
+    "Men"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 50,
+      "_id": "66d77ac08f31e09406eed836"
+    },
+    {
+      "size": "40",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed837"
+    },
+    {
+      "size": "41",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed838"
+    },
+    {
+      "size": "42",
+      "amount": 20,
+      "_id": "66d77ac08f31e09406eed839"
+    },
+    {
+      "size": "43",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed83a"
+    },
+    {
+      "size": "44",
+      "amount": 8,
+      "_id": "66d77ac08f31e09406eed83b"
+    },
+    {
+      "size": "45",
+      "amount": 5,
+      "_id": "66d77ac08f31e09406eed83c"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed835",
+  "__v": 0
+}

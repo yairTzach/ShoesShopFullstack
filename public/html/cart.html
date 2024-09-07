@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECKOUT</title>
+
+    <link rel="stylesheet" href="../css/cart.css"> <!--  path to the cart CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="header">
+        <!-- Profile, Logout, Readme, and LLM links -->
+        <a href="/html/profile.html" id="profileButton" class="header-link">Profile</a>
+        <i class="fas fa-shoe-prints navbar-icon"></i>
+        <a href="/logout" id="logoutButton" class="header-link">Logout</a>
+        <i class="fas fa-shoe-prints navbar-icon"></i>
+        <a href="/html/readme.html" class="header-link">Readme</a>
+        <i class="fas fa-shoe-prints navbar-icon"></i>
+        <a href="/html/llm.html" class="header-link">LLM</a>
+        <h1 id="title">CHECKOUT</h1>
+        <div id="navMenu">
+            <a href="/html/main.html" id="homeButton" class="header-link">Home</a>
+            <i class="fas fa-shoe-prints navbar-icon"></i>
+            <a href="/html/publicReviews.html" id="Reviews" class="header-link">Reviews</a>
+            <i class="fas fa-shoe-prints navbar-icon"></i>
+            <a href="/html/purchaseHistory.html" id="purchaseHistoryIcon" class="header-link">Purchase History</a>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Section -->
+    <div id="cartContainer">
+        <h2 class="center-title">Modify Your Cart for the Last Time</h2>
+        <div id="cartItems"></div>
+        <div id="cartTotal">Total Price: $1620.00</div>
+
+        <!-- Payment Information Section -->
+        <div class="payment-section">
+            <h2 class="center-title">Payment Information</h2>
+            <form id="paymentForm" class="payment-form">
+                <input type="text" id="cardNumber" placeholder="Card Number" required>
+                <input type="text" id="cardName" placeholder="Name on Card" required>
+                <input type="month" id="cardExpiry" placeholder="Expiry Date" required>
+                <input type="text" id="cardCVC" placeholder="CVC" required>
+                <!-- Pay Now button inside the form -->
+                <button type="submit" class="proceed-button">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/cart.js"></script> <!-- path to the cart JS -->
+    
+</body>
+</html>

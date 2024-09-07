@@ -1,0 +1,69 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #dee4e5; /* Dark background color */
+    color: #ffffff; /* White text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Container for thank you message */
+#thankyouContainer {
+    background: #333; /* Dark gray background */
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 600px;
+    width: 80%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#thankyouContainer:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    color: #f4f4f4; /* Light gray heading color */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #b3b3b3; /* Lighter gray color for text */
+}
+
+/* Button styles */
+.home-button {
+    padding: 10px 30px;
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark text color */
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #333; /* Border matching the theme */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #e6e6e6; /* Slightly lighter on hover */
+    transform: translateY(-4px);
+}
+
+.home-button:active {
+    background-color: #cccccc; /* Darker gray on click */
+    transform: translateY(0);
+}

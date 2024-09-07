@@ -1,0 +1,45 @@
+{
+  "brand": "New Balance",
+  "model": "990v5",
+  "description": "The New Balance 990v5 combines performance and style, making it a versatile choice for everyday wear.",
+  "price": 175,
+  "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/3/w364570008-11710154721.jpg",
+  "categories": [
+    "Casual",
+    "Men"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 50,
+      "_id": "66d77ac08f31e09406eed827"
+    },
+    {
+      "size": "40",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed828"
+    },
+    {
+      "size": "41",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed829"
+    },
+    {
+      "size": "42",
+      "amount": 20,
+      "_id": "66d77ac08f31e09406eed82a"
+    },
+    {
+      "size": "43",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed82b"
+    },
+    {
+      "size": "44",
+      "amount": 8,
+      "_id": "66d77ac08f31e09406eed82c"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed826",
+  "__v": 0
+}

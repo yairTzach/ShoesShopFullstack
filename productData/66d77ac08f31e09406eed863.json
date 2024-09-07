@@ -1,0 +1,20 @@
+{
+  "brand": "Brooks",
+  "model": "Ghost 13",
+  "description": "The Brooks Ghost 13 is a reliable running shoe with balanced cushioning.",
+  "price": 130,
+  "image": "https://www.caremedics.co.il/wp-content/uploads/2022/07/9f8ea20c02de3e4e5883a1862abd6dfc.jpg",
+  "categories": [
+    "Running",
+    "Women"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 0,
+      "_id": "66d77ac08f31e09406eed864"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed863",
+  "__v": 0
+}

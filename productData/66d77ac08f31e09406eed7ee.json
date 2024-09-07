@@ -1,0 +1,45 @@
+{
+  "brand": "Adidas",
+  "model": "Ultraboost 21",
+  "description": "The Adidas Ultraboost 21 offers a comfortable and responsive feel.",
+  "price": 180,
+  "image": "https://arosport.co.il/cdn/shop/products/21-adidas-ultraboost-21-fy0377-arosport--1_1024x1024.jpg?v=1699515262",
+  "categories": [
+    "Comfort",
+    "Women"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 50,
+      "_id": "66d77ac08f31e09406eed7ef"
+    },
+    {
+      "size": "37",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed7f0"
+    },
+    {
+      "size": "38",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed7f1"
+    },
+    {
+      "size": "39",
+      "amount": 20,
+      "_id": "66d77ac08f31e09406eed7f2"
+    },
+    {
+      "size": "40",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed7f3"
+    },
+    {
+      "size": "41",
+      "amount": 8,
+      "_id": "66d77ac08f31e09406eed7f4"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed7ee",
+  "__v": 0
+}

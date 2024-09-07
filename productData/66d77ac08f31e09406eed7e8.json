@@ -1,0 +1,20 @@
+{
+  "_id": "66d77ac08f31e09406eed7e8",
+  "brand": "Nike",
+  "model": "Air Max 270",
+  "description": "The Nike Air Max 270 features the brand's largest air unit yet for a super soft ride.",
+  "price": 150,
+  "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4a6a9835-85b5-4ca2-9ed5-55caecd7de6a/NIKE+AIR+MAX+270+%28GS%29.png",
+  "categories": [
+    "Sports",
+    "Men"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 0,
+      "_id": "66d9be4d7eeae9c68312a94a"
+    }
+  ],
+  "__v": 0
+}

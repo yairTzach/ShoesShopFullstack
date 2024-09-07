@@ -1,0 +1,32 @@
+/* CSS for adjusting image size in purchase history */
+.purchase-card img {
+    max-width: 150px; /* Set the maximum width you prefer */
+    max-height: 150px; /* Set the maximum height you prefer */
+    object-fit: cover; /* Adjusts the image to fit within the specified dimensions */
+    border-radius: 8px; /* Optional: Add rounded corners if desired */
+    margin-right: 20px; /* Space between image and text */
+}
+
+/* Card style for each purchase */
+.purchase-card {
+    background: #444; /* Background color for the card */
+    color: white;
+    padding: 20px;
+    margin: 10px 0; /* Space between cards */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #555;
+    display: flex; /* Flex layout to align content */
+    gap: 20px; /* Gap between image and text */
+    align-items: center; /* Center content vertically */
+}
+
+.purchase-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-info {
+    flex-grow: 1;
+}

@@ -1,0 +1,45 @@
+{
+  "brand": "Puma",
+  "model": "Cali Sport",
+  "description": "The Puma Cali Sport is a stylish sneaker with a laid-back California vibe.",
+  "price": 90,
+  "image": "https://zolpo.co.il/wp-content/uploads/2019/10/3-2-1.png",
+  "categories": [
+    "Fashion",
+    "Women"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed89c"
+    },
+    {
+      "size": "37",
+      "amount": 20,
+      "_id": "66d77ac08f31e09406eed89d"
+    },
+    {
+      "size": "38",
+      "amount": 18,
+      "_id": "66d77ac08f31e09406eed89e"
+    },
+    {
+      "size": "39",
+      "amount": 25,
+      "_id": "66d77ac08f31e09406eed89f"
+    },
+    {
+      "size": "40",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed8a0"
+    },
+    {
+      "size": "41",
+      "amount": 8,
+      "_id": "66d77ac08f31e09406eed8a1"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed89b",
+  "__v": 0
+}

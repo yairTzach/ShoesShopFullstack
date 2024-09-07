@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Review</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/submitReview.css"> <!--  path to link to the external CSS -->
+</head>
+<body>
+
+    <div id="reviewPanel">
+        <h1>Submit a Review for <span id="productTitle"></span></h1>
+        <img id="productImage" src="" alt="Shoe Image">
+
+        <div class="rating-category">
+            <h3>Comfort:</h3>
+            <p>How comfortable the shoe feels during regular wear.</p>
+            <div class="rating-container" id="comfort">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+        </div>
+
+        <div class="rating-category">
+            <h3>Style:</h3>
+            <p>The aesthetic appeal and design of the shoe.</p>
+            <div class="rating-container" id="style">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+        </div>
+
+        <div class="rating-category">
+            <h3>Durability:</h3>
+            <p>How well the shoe holds up over time with regular use.</p>
+            <div class="rating-container" id="durability">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+        </div>
+
+        <div class="rating-category">
+            <h3>Material Quality:</h3>
+            <p>The quality of the materials used in the shoe's construction.</p>
+            <div class="rating-container" id="materialQuality">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+        </div>
+
+        <div class="rating-category">
+            <h3>Value for Money:</h3>
+            <p>The balance between the shoe's price and the quality/features offered.</p>
+            <div class="rating-container" id="valueForMoney">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+        </div>
+
+        <h3>Additional Comments:</h3>
+        <textarea id="additionalComments" placeholder="Write your submitReview here..."></textarea>
+        <button id="submitReview">Submit Review</button>
+    </div>
+
+    <script src="../js/submitReview.js"></script> <!--  path to link to the external JS -->
+</body>
+</html>

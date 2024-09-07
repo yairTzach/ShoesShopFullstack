@@ -1,0 +1,39 @@
+body {
+    background-color: #dee4e5;
+    color: black;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    color: black;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.content-card {
+    background-color: #333; /* Black card background */
+    color: white; /* White text color */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-card h2, .content-card h3 {
+    color: white; /* White headings */
+    margin-top: 0; /* Ensuring the headers are not too spaced */
+}
+
+.content-card p, .content-card li {
+    color: white; /* White text in paragraphs and list items */
+    line-height: 1.5; /* Ensuring good line spacing for readability */
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto; /* Center the content */
+    max-width: 1000px; /* Constrain the maximum width for readability */
+}

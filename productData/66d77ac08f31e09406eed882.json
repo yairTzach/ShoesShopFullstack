@@ -1,0 +1,20 @@
+{
+  "brand": "On",
+  "model": "Cloudswift",
+  "description": "The On Cloudswift offers lightweight design and impact protection for urban runs.",
+  "price": 150,
+  "image": "https://is4.revolveassets.com/images/p4/n/z/ONF-MZ183_V1.jpg",
+  "categories": [
+    "Running",
+    "Men"
+  ],
+  "sizes": [
+    {
+      "size": "40",
+      "amount": 0,
+      "_id": "66d77ac08f31e09406eed883"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed882",
+  "__v": 0
+}

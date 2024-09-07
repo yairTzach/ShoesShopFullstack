@@ -1,0 +1,87 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #dee4e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main Container */
+.profile-container {
+  width: 90%;
+  max-width: 1400px;
+  background: #333;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  color: white;
+}
+
+/* Profile Panel */
+#profilePanel {
+  background: #444;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #555;
+}
+
+/* Typography */
+h1, h2 {
+  color: #eee;
+  margin-bottom: 10px;
+}
+
+/* Profile Info */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-info label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+.profile-info input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #555;
+  color: white;
+}
+
+.profile-info input[disabled] {
+  background-color: #666;
+}
+
+button {
+  padding: 8px 20px; /* Adjust padding to reduce button size */
+  background-color: white; /* Set background color to white */
+  color: black; /* Set text color */
+  border: 2px solid black; /* Black border for consistency */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px; /* Adjust font size to match */
+  text-align: center; /* Center the text */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0 auto; /* Center the button horizontally */
+  display: block; /* Ensure the button takes the whole line like input fields */
+}
+
+
+button:hover {
+  background-color: black; /* Change background on hover */
+  color: white; /* Change text color on hover */
+}
+
+#saveButton, #changePasswordButton {
+  display: none; /* Hide initially */
+}

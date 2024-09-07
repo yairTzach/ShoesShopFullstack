@@ -1,0 +1,425 @@
+[
+    {
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "description": "The Nike Air Max 270 features the brand's largest air unit yet for a super soft ride.",
+        "price": 150,
+        "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4a6a9835-85b5-4ca2-9ed5-55caecd7de6a/NIKE+AIR+MAX+270+%28GS%29.png",
+        "categories": ["Sports", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 50 }
+        ]
+    },
+    {
+        "brand": "Adidas",
+        "model": "Ultraboost 21",
+        "description": "The Adidas Ultraboost 21 offers a comfortable and responsive feel.",
+        "price": 180,
+        "image": "https://arosport.co.il/cdn/shop/products/21-adidas-ultraboost-21-fy0377-arosport--1_1024x1024.jpg?v=1699515262",
+        "categories": ["Comfort", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "37", "amount": 10 },
+            { "size": "38", "amount": 15 },
+            { "size": "39", "amount": 20 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 8 }
+        ]
+    },
+    {
+        "brand": "Puma",
+        "model": "RS-X3",
+        "description": "The Puma RS-X3 comes with bold colors and a retro vibe.",
+        "price": 120,
+        "image": "https://365mashbir.co.il/cdn/shop/files/Untitled_1000x1500px_-2024-08-11T105219.413.jpg",
+        "categories": ["Fashion", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "41", "amount": 10 },
+            { "size": "42", "amount": 15 },
+            { "size": "43", "amount": 20 },
+            { "size": "44", "amount": 10 },
+            { "size": "45", "amount": 8 },
+            { "size": "46", "amount": 5 }
+        ]
+    },
+    {
+        "brand": "Reebok",
+        "model": "Nano X1",
+        "description": "The Reebok Nano X1 is designed for performance with a versatile fit.",
+        "price": 130,
+        "image": "https://d3m9l0v76dty0.cloudfront.net/system/photos/12590981/large/6778f93db5218e213fb81a8def20b978.jpg",
+        "categories": ["Sports", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "40", "amount": 0 },
+            { "size": "41", "amount": 0 },
+            { "size": "42", "amount": 0 },
+            { "size": "43", "amount": 0 },
+            { "size": "44", "amount": 0 },
+            { "size": "45", "amount": 0 }
+        ]
+    },
+    
+    {
+        "brand": "Nike",
+        "model": "Air Force 1",
+        "description": "A timeless classic, the Nike Air Force 1 brings a fresh twist to the legendary silhouette.",
+        "price": 100,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/x/9/x902820005-11656407164.jpg",
+        "categories": ["Casual", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "36", "amount": 12 },
+            { "size": "37", "amount": 15 },
+            { "size": "38", "amount": 20 },
+            { "size": "39", "amount": 10 },
+            { "size": "40", "amount": 15 },
+            { "size": "41", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "Adidas",
+        "model": "Yeezy Boost 350 V2",
+        "description": "The Adidas Yeezy Boost 350 V2 offers an innovative design and comfort with its Primeknit upper.",
+        "price": 220,
+        "image": "https://nextsneakers.co.il/wp-content/uploads/2022/05/BB6373_1512x-1-1024x1024.jpeg",
+        "categories": ["Streetwear", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "39", "amount": 12 },
+            { "size": "40", "amount": 15 },
+            { "size": "41", "amount": 20 },
+            { "size": "42", "amount": 15 },
+            { "size": "43", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "Asics",
+        "model": "Gel-Kayano 27",
+        "description": "The Asics Gel-Kayano 27 provides stability and comfort, ideal for long runs.",
+        "price": 160,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/1/w169290001-11698842432.jpg",
+        "categories": ["Running", "Men"],
+        "sizes": [
+            { "size": "41", "amount": 0 },
+            { "size": "42", "amount": 0 },
+            { "size": "43", "amount": 0 },
+            { "size": "44", "amount": 0 },
+            { "size": "45", "amount": 0 }
+        ]
+    },
+    {
+        "brand": "New Balance",
+        "model": "990v5",
+        "description": "The New Balance 990v5 combines performance and style, making it a versatile choice for everyday wear.",
+        "price": 175,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/3/w364570008-11710154721.jpg",
+        "categories": ["Casual", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 15 },
+            { "size": "42", "amount": 20 },
+            { "size": "43", "amount": 15 },
+            { "size": "44", "amount": 8 }
+        ]
+    },
+    {
+        "brand": "Vans",
+        "model": "Old Skool",
+        "description": "The Vans Old Skool is a classic skate shoe, known for its durability and iconic style.",
+        "price": 60,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/5/w500580005-11717495564.jpg",
+        "categories": ["Casual", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 0 },
+            { "size": "37", "amount": 0 },
+            { "size": "38", "amount": 0 }
+           
+        ]
+    },
+    {
+        "brand": "Under Armour",
+        "model": "Curry 7",
+        "description": "The Under Armour Curry 7 delivers responsiveness and support for fast-paced play.",
+        "price": 140,
+        "image": "https://i5.walmartimages.com/seo/Under-Armour-Men-s-Team-Curry-7-Basketball-Shoes_336d6726-747c-4721-a37b-a9b6de93685f.11e3e1824102c7d5d6d1e6a31ee73d37.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+        "categories": ["Basketball", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 15 },
+            { "size": "42", "amount": 20 },
+            { "size": "43", "amount": 10 },
+            { "size": "44", "amount": 8 },
+            { "size": "45", "amount": 5 }
+        ]
+    },
+    {
+        "brand": "Converse",
+        "model": "Chuck Taylor All Star",
+        "description": "The Converse Chuck Taylor All Star is an iconic shoe with a timeless design.",
+        "price": 55,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/1/w189410012-11713187521.jpg",
+        "categories": ["Casual", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 0 },
+            { "size": "37", "amount": 0 },
+            { "size": "38", "amount": 0 },
+            { "size": "39", "amount": 0 },
+            { "size": "40", "amount": 0 },
+            { "size": "41", "amount": 0 }
+        ]
+    },
+    {
+        "brand": "Fila",
+        "model": "Disruptor II",
+        "description": "The Fila Disruptor II is a bold shoe with a chunky sole and retro design.",
+        "price": 90,
+        "image": "https://img.fruugo.com/product/9/39/1543444399_max.jpg",
+        "categories": ["Fashion", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 15 },
+            { "size": "37", "amount": 20 },
+            { "size": "38", "amount": 18 },
+            { "size": "39", "amount": 25 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 8 }
+        ]
+    },
+    {
+        "brand": "Skechers",
+        "model": "D'Lites",
+        "description": "The Skechers D'Lites offers comfort with a stylish, chunky design.",
+        "price": 85,
+        "image": "https://www.skechers.com/dw/image/v2/BDCN_PRD/on/demandware.static/-/Sites-skechers-master/default/dw3acaff72/images/large/11930_BKW.jpg?sw=1600",
+        "categories": ["Comfort", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 15 },
+            { "size": "37", "amount": 20 },
+            { "size": "38", "amount": 18 },
+            { "size": "39", "amount": 25 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 8 }
+        ]
+    },
+    {
+        "brand": "Hoka One One",
+        "model": "Clifton 7",
+        "description": "The Hoka One One Clifton 7 is a lightweight shoe that offers superior cushioning.",
+        "price": 130,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/0/w091150021-11692661159_1.jpg",
+        "categories": ["Running", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 15 },
+            { "size": "42", "amount": 20 },
+            { "size": "43", "amount": 15 },
+            { "size": "44", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "Brooks",
+        "model": "Ghost 13",
+        "description": "The Brooks Ghost 13 is a reliable running shoe with balanced cushioning.",
+        "price": 130,
+        "image": "https://www.caremedics.co.il/wp-content/uploads/2022/07/9f8ea20c02de3e4e5883a1862abd6dfc.jpg",
+        "categories": ["Running", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 0 }
+        ]
+    },
+    {
+        "brand": "Saucony",
+        "model": "Endorphin Speed",
+        "description": "The Saucony Endorphin Speed is built for speed and comfort, ideal for race day.",
+        "price": 160,
+        "image": "https://www.caremedics.co.il/wp-content/uploads/2022/07/s20647-16_2_2.jpg",
+        "categories": ["Running", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "39", "amount": 12 },
+            { "size": "40", "amount": 15 },
+            { "size": "41", "amount": 20 },
+            { "size": "42", "amount": 15 },
+            { "size": "43", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "Mizuno",
+        "model": "Wave Rider 24",
+        "description": "The Mizuno Wave Rider 24 offers a smooth ride with excellent cushioning.",
+        "price": 130,
+        "image": "https://365mashbir.co.il/cdn/shop/products/nl-sfvr-lnshim-wave-rider-26-440939.jpg?v=1704568911",
+        "categories": ["Running", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 50 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 15 },
+            { "size": "42", "amount": 20 },
+            { "size": "43", "amount": 15 },
+            { "size": "44", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "Nike",
+        "model": "Pegasus 37",
+        "description": "The Nike Pegasus 37 is a versatile running shoe that provides responsive cushioning.",
+        "price": 120,
+        "image": "https://www.jdsports.co.il/cdn/shop/products/jd_DX2498-006_a_1300x.jpg?v=1707208012",
+        "categories": ["Running", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 12 },
+            { "size": "37", "amount": 10 },
+            { "size": "38", "amount": 15 },
+            { "size": "39", "amount": 20 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 8 }
+        ]
+    },
+    {
+        "brand": "On",
+        "model": "Cloudswift",
+        "description": "The On Cloudswift offers lightweight design and impact protection for urban runs.",
+        "price": 150,
+        "image": "https://is4.revolveassets.com/images/p4/n/z/ONF-MZ183_V1.jpg",
+        "categories": ["Running", "Men"],
+        "sizes": [
+            { "size": "40", "amount": 0 }
+        ]
+    },
+    {
+        "brand": "Reebok",
+        "model": "Club C 85",
+        "description": "The Reebok Club C 85 combines retro style with a modern twist.",
+        "price": 75,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/z/4/z408110005-11649947850.jpg",
+        "categories": ["Casual", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 15 },
+            { "size": "37", "amount": 18 },
+            { "size": "38", "amount": 25 },
+            { "size": "39", "amount": 15 },
+            { "size": "40", "amount": 20 },
+            { "size": "41", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "Nike",
+        "model": "ZoomX Vaporfly Next%",
+        "description": "The Nike ZoomX Vaporfly Next% is a high-performance running shoe, designed for speed.",
+        "price": 250,
+        "image": "https://www.misterrunning.com/images/2024-media-03/nike-zoomx-vaporfly-next-3-scarpe-running-donna-coconut-milk-fv3634-181_A.jpg",
+        "categories": ["Running", "Men"],
+        "sizes": [
+            { "size": "39", "amount": 12 },
+            { "size": "40", "amount": 15 },
+            { "size": "41", "amount": 20 },
+            { "size": "42", "amount": 15 },
+            { "size": "43", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "Adidas",
+        "model": "Superstar",
+        "description": "The Adidas Superstar is a timeless classic with a sleek design and durable construction.",
+        "price": 85,
+        "image": "https://is4.revolveassets.com/images/p4/n/z/ADIO-MZ65_V1.jpg",
+        "categories": ["Casual", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 0 }
+        ]
+    },
+    {
+        "brand": "Puma",
+        "model": "Cali Sport",
+        "description": "The Puma Cali Sport is a stylish sneaker with a laid-back California vibe.",
+        "price": 90,
+        "image": "https://zolpo.co.il/wp-content/uploads/2019/10/3-2-1.png",
+        "categories": ["Fashion", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 15 },
+            { "size": "37", "amount": 20 },
+            { "size": "38", "amount": 18 },
+            { "size": "39", "amount": 25 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 8 }
+        ]
+    },
+    {
+        "brand": "Nike",
+        "model": "Blazer Mid '77",
+        "description": "The Nike Blazer Mid '77 brings vintage basketball style to the modern era.",
+        "price": 110,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/x/6/x623450005-11678345065.jpg",
+        "categories": ["Casual", "Men"],
+        "sizes": [
+            { "size": "36", "amount": 15 },
+            { "size": "37", "amount": 18 },
+            { "size": "38", "amount": 25 },
+            { "size": "39", "amount": 15 },
+            { "size": "40", "amount": 20 },
+            { "size": "41", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "Asics",
+        "model": "Gel-Quantum 180",
+        "description": "The Asics Gel-Quantum 180 offers all-day comfort and a responsive ride.",
+        "price": 150,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/2/w266450001-11715235431.jpg",
+        "categories": ["Running", "Men"],
+        "sizes": [
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 15 },
+            { "size": "42", "amount": 20 },
+            { "size": "43", "amount": 15 },
+            { "size": "44", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "New Balance",
+        "model": "574",
+        "description": "The New Balance 574 is a classic sneaker with a timeless design.",
+        "price": 80,
+        "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/4/w413200031-11713950133.jpg",
+        "categories": ["Casual", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 15 },
+            { "size": "37", "amount": 18 },
+            { "size": "38", "amount": 25 },
+            { "size": "39", "amount": 15 },
+            { "size": "40", "amount": 20 },
+            { "size": "41", "amount": 10 }
+        ]
+    },
+    {
+        "brand": "Adidas",
+        "model": "NMD_R1",
+        "description": "The Adidas NMD_R1 is a modern sneaker that blends retro and futuristic design elements.",
+        "price": 140,
+        "image": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/0fd9bc2bfc234ce0b69aaef900fddbdf_9366/HQ4452_01_standard.jpg",
+        "categories": ["Fashion", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 0 }
+        ]
+    },
+    {
+        "brand": "Under Armour",
+        "model": "HOVR Phantom 2",
+        "description": "The Under Armour HOVR Phantom 2 offers a snug fit and energy return with every step.",
+        "price": 140,
+        "image": "https://cms-cdn.thesolesupplier.co.uk/2021/10/under-armour-hovr-phantom-2-abc-white_w1024_h1024_pad_.jpg.webp",
+        "categories": ["Running", "Women"],
+        "sizes": [
+            { "size": "36", "amount": 12 },
+            { "size": "37", "amount": 10 },
+            { "size": "38", "amount": 15 },
+            { "size": "39", "amount": 20 },
+            { "size": "40", "amount": 10 },
+            { "size": "41", "amount": 8 }
+        ]
+    }
+    ]

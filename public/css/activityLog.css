@@ -1,0 +1,55 @@
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-button i {
+    font-size: 32px; /* Set the logout button's font size smaller for consistency */
+}
+
+.admin-management-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; /* Adjusted to match other pages */
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    padding: 12px 20px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.admin-management-button i {
+    position: relative;
+    top: -10px;
+}
+
+.icon-button:hover, .admin-management-button:hover {
+    color: white;
+    background-color: black;
+}
+
+.row.justify-content-between {
+    display: flex;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px; /* Adjust the spacing between the buttons */
+}

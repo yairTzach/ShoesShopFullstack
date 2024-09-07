@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css"> 
+    <link rel="stylesheet" href="../css/admin.css"> 
+    <style>
+        .hidden {
+            display: none !important;
+        }
+        .center-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="header">
+        <div id="cartIcon" class="fas fa-shopping-cart">
+            <div id="cartCount">0</div>
+        </div>
+        <i class="fas fa-shoe-prints navbar-icon"></i>
+        <a href="/logout" id="logoutButton" class="header-link">Logout</a>
+        <i class="fas fa-shoe-prints navbar-icon"></i>
+        <a href="/html/readme.html" class="header-link">Readme</a>
+        <i class="fas fa-shoe-prints navbar-icon"></i>
+        <a href="/html/llm.html" class="header-link">LLM</a>
+        <h1 id="title">ADMIN MANAGEMENT</h1>
+        <div id="navMenu">
+            <a href="/html/main.html" id="homeButton" class="header-link">Home</a>
+            <i class="fas fa-shoe-prints navbar-icon"></i>
+            <a href="/html/publicReviews.html" id="Reviews" class="header-link">Reviews</a>
+            <i class="fas fa-shoe-prints navbar-icon"></i>
+            <a href="/html/purchaseHistory.html" id="purchaseHistoryIcon" class="header-link">Purchase History</a>
+        </div>
+    </div>
+
+    <!-- Cart Container -->
+    <div id="cartContainer" style="display: none;"> <!-- Initially hidden -->
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        <div id="cartTotal"></div>
+        <a href="/html/cart.html" id="viewCartButton" class="proceed-button">View Cart</a>
+    </div>
+
+    <!-- Activity Log Button -->
+    <div class="center-button">
+        <button id="activityLogButton" class="admin-management-button" >Activity Log</button>
+    </div>
+
+    <main class="admin-container">
+        <!-- Add Product Card -->
+        <section class="card">
+            <h2>Add New Product</h2>
+            <form id="addProductForm">
+                <div class="product-info">
+                    <input type="text" id="newBrand" placeholder="Brand" required>
+                    <input type="text" id="newModel" placeholder="Model" required>
+                    <input type="text" id="newDescription" placeholder="Description" required>
+                    <input type="number" id="newPrice" placeholder="Price" required>
+                    <input type="url" id="newImage" placeholder="Image URL" required>
+                </div>
+
+                <h3>Sizes and Amounts:</h3>
+                <div id="sizeAmountContainer">
+                    <div class="size-amount-group">
+                        <label>Size:
+                            <input type="text" placeholder="Size" class="sizeInput" required>
+                        </label>
+                        <label>Amount:
+                            <input type="number" placeholder="Amount" class="amountInput" required>
+                        </label>
+                    </div>
+                </div>
+                <button type="button" id="addSizeAmountButton">Add Size</button>
+
+                <h3>Categories:</h3>
+                <div class="categories">
+                    <label><input type="checkbox" value="Sports"> Sports</label>
+                    <label><input type="checkbox" value="Fashion"> Fashion</label>
+                    <label><input type="checkbox" value="Comfort"> Comfort</label>
+                    <label><input type="checkbox" value="Style"> Style</label>
+                    <label><input type="checkbox" value="Casual"> Casual</label>
+                    <label><input type="checkbox" value="Formal"> Formal</label>
+                    <label><input type="checkbox" value="Outdoor"> Outdoor</label>
+                    <label><input type="checkbox" value="Workwear"> Workwear</label>
+                    <label><input type="checkbox" value="Athleisure"> Athleisure</label>
+                    <label><input type="checkbox" value="Kids"> Kids</label>
+                    <label><input type="checkbox" value="Women"> Women</label>
+                    <label><input type="checkbox" value="Men"> Men</label>
+                </div>
+                <div id="selectedCategories"></div>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <!-- Manage Products Card -->
+        <section class="card">
+            <h2>Manage Products</h2>
+            <button id="filterOutOfStockButton">Filter Out of Stock</button>
+            <div id="productList">
+
+                <div class="product">
+                    <h3>Puma - RS-X3</h3>
+                    <img src="https://i.ebayimg.com/images/g/HTQAAOSwR4RjEMGR/s-l2400.webp" alt="Puma RS-X3">
+                    <p>The Puma RS-X3 comes with bold colors and a retro vibe.</p>
+                    <p>Price: $120</p>
+                    <p>Sizes: 41: 7, 42: 15, 43: 20, 44: 10, 45: 7, 46: 5</p>
+                    <button class="remove-button">Remove</button>
+                    <button class="update-button">Update</button>
+                </div>
+            </div>
+
+            <!-- Update Product Section  -->
+            <h2 class="hidden" id="updateTitle">Update Product</h2>
+            <form id="updateProductForm" class="hidden">
+                <input type="hidden" id="updateProductId">
+                <input type="text" id="updateBrand" placeholder="Brand" required>
+                <input type="text" id="updateModel" placeholder="Model" required>
+                <input type="text" id="updateDescription" placeholder="Description" required>
+                <input type="number" id="updatePrice" placeholder="Price" required>
+                <input type="url" id="updateImage" placeholder="Image URL" required>
+
+                <h3>Sizes and Amounts:</h3>
+                <div id="updateSizeAmountContainer">
+                    <div class="size-amount-group">
+                        <label>Size:
+                            <input type="text" placeholder="Size" class="sizeInput" required>
+                        </label>
+                        <label>Amount:
+                            <input type="number" placeholder="Amount" class="amountInput" required>
+                        </label>
+                    </div>
+                </div>
+                <button type="button" id="addUpdateSizeAmountButton">Add Size</button>
+
+                <h3>Categories:</h3>
+                <div class="categories">
+                    <label><input type="checkbox" value="Sports"> Sports</label>
+                    <label><input type="checkbox" value="Fashion"> Fashion</label>
+                    <label><input type="checkbox" value="Comfort"> Comfort</label>
+                    <label><input type="checkbox" value="Style"> Style</label>
+                    <label><input type="checkbox" value="Casual"> Casual</label>
+                    <label><input type="checkbox" value="Formal"> Formal</label>
+                    <label><input type="checkbox" value="Outdoor"> Outdoor</label>
+                    <label><input type="checkbox" value="Workwear"> Workwear</label>
+                    <label><input type="checkbox" value="Athleisure"> Athleisure</label>
+                    <label><input type="checkbox" value="Kids"> Kids</label>
+                    <label><input type="checkbox" value="Women"> Women</label>
+                    <label><input type="checkbox" value="Men"> Men</label>
+                </div>
+                <div id="selectedUpdateCategories"></div>
+
+                <button type="submit">Update Product</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="../js/main.js"></script> <!-- path to the main.js -->
+    <script src="../js/admin.js"></script> <!--path to the admin.js -->
+</body>
+</html>

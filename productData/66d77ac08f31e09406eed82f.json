@@ -1,0 +1,30 @@
+{
+  "brand": "Vans",
+  "model": "Old Skool",
+  "description": "The Vans Old Skool is a classic skate shoe, known for its durability and iconic style.",
+  "price": 60,
+  "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/5/w500580005-11717495564.jpg",
+  "categories": [
+    "Casual",
+    "Men"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 0,
+      "_id": "66d77ac08f31e09406eed830"
+    },
+    {
+      "size": "37",
+      "amount": 0,
+      "_id": "66d77ac08f31e09406eed831"
+    },
+    {
+      "size": "38",
+      "amount": 0,
+      "_id": "66d77ac08f31e09406eed832"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed82f",
+  "__v": 0
+}

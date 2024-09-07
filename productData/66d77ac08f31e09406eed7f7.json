@@ -1,0 +1,50 @@
+{
+  "brand": "Puma",
+  "model": "RS-X3",
+  "description": "The Puma RS-X3 comes with bold colors and a retro vibe.",
+  "price": 120,
+  "image": "https://365mashbir.co.il/cdn/shop/files/Untitled_1000x1500px_-2024-08-11T105219.413.jpg",
+  "categories": [
+    "Fashion",
+    "Men"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 50,
+      "_id": "66d77ac08f31e09406eed7f8"
+    },
+    {
+      "size": "41",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed7f9"
+    },
+    {
+      "size": "42",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed7fa"
+    },
+    {
+      "size": "43",
+      "amount": 20,
+      "_id": "66d77ac08f31e09406eed7fb"
+    },
+    {
+      "size": "44",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed7fc"
+    },
+    {
+      "size": "45",
+      "amount": 8,
+      "_id": "66d77ac08f31e09406eed7fd"
+    },
+    {
+      "size": "46",
+      "amount": 5,
+      "_id": "66d77ac08f31e09406eed7fe"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed7f7",
+  "__v": 0
+}

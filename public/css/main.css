@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+    margin: 0;
+    color: rgb(81, 81, 194);
+    padding-top: 20px;
+    background: #dee4e5;
+    font: 600 16px/18px "Open Sans", sans-serif;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.out-of-stock {
+    color: white;
+    background-color: red;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.clearfix:after, .clearfix:before {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    gap: 40px;
+}
+
+.header-link {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.header-link:hover {
+    color: #aaa; /* Grayish color on hover */
+}
+
+.readme-button, .llm-button {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.readme-button:hover, .llm-button:hover {
+    color: #cacaca; /* Grayish color on hover */
+}
+
+#title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    animation: move 5s infinite;
+    margin: 0 auto;
+    flex: 1;
+}
+
+@keyframes move {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+#navMenu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+#navMenu a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+#navMenu a:hover {
+    color: #cacaca;
+}
+
+.sneaker-icon {
+    width: 20px; /* Adjust the size as needed */
+    height: auto;
+    margin: 0 10px; /* Adjust the margin for spacing */
+    vertical-align: middle; /* Aligns with the text vertically */
+    display: inline-block; /* Ensures the icon stays inline */
+}
+
+
+
+
+#hamburgerMenu {
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    z-index: 1001; /* Ensure this is above the sidebar */
+    position: relative;
+}
+
+#cartIcon {
+    font-size: 24px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#cartCount {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+#mainContent {
+    flex: 1;
+    padding-right: 220px;
+}
+
+#sidebar {
+    width: 220px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: #333; /* Sidebar background color */
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s; /* Smooth transition for both opening and closing */
+    z-index: 1000; /* Ensure it appears below the hamburger menu */
+    color: white;
+    overflow-y: auto; /* Allow scrolling */
+    visibility: hidden; /* Ensure it's hidden initially */
+    opacity: 0; /* Start fully transparent */
+}
+
+#availableBrands {
+    display: none;
+}
+
+#sidebar.open {
+    transform: translateX(0); /* Move sidebar into view */
+    visibility: visible; /* Make it visible */
+    opacity: 1; /* Make it fully opaque */
+}
+
+input, button, select {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.proceed-button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.category-toggle,
+#availableBrandsToggle {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.category-section {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.category-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    flex-direction: row-reverse;
+}
+
+.category-list input[type="checkbox"] {
+    margin-left: 10px;
+    margin-right: 0;
+    margin-top: 0;
+    transform: translateY(1px);
+}
+
+#productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.product {
+    background: #333; /* Black background for the product cards */
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+}
+
+.product .image-container {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+#cartContainer {
+    display: none; /* Start hidden; controlled by JavaScript */
+    margin-top: 20px;
+    background: #fff; /* White background */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: absolute;
+    left: 20px;
+    top: 60px;
+    z-main: 10;
+    width: 300px;
+}
+
+/* Shopping Cart Header */
+#cartContainer h2 {
+    color: black; /* Change the color to black */
+    text-align: center; /* Center the header text */
+    font-size: 2em; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Add some spacing below the header */
+}
+
+
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cart-item .price {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cart-item h4 {
+    font-size: 1.2em; /* Larger font for the item name */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.cart-item .size-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.cart-item .quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px; /* Adds space between the buttons and text */
+}
+
+.cart-item .quantity-control button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white; /* Matches the theme color */
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .quantity-control span {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.quantity-control button:hover {
+    background-color: #ddd;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item .item-name {
+    font-weight: bold;
+}
+
+.cart-item .item-price {
+    color: #888;
+}
+
+.cart-item img {
+    width: 100px; /* Adjust size for a larger image */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#cartTotal {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center; /* Center align the total price */
+    color: black; /* Black color for the */
+}
+
+#viewCartButton {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: 2px solid black; /* Black border to make it look like a button */
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#filtersClose {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+#filterBySelectedCategories {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid black; /* Adds a black border */
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px; /* Keeps the rounded corners */
+    margin-top: 10px;
+}
+
+.admin-management-button {
+    background-color: white; /* White background for the button */
+    color: black; /* Black text color */
+    border: 2px solid black; /* Black border */
+    padding: 10px 20px; /* Padding for a comfortable button size */
+    border-radius: 8px; /* Rounded corners */
+    font-family: 'Roboto', sans-serif; /* Font style */
+    font-size: 18px; /* Font size for readability */
+    font-weight: 700; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between buttons when next to each other */
+}
+
+.admin-management-button:hover {
+    background-color: black; /* Invert colors on hover */
+    color: white; /* White text on hover */
+}

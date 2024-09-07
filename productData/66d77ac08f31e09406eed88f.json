@@ -1,0 +1,40 @@
+{
+  "brand": "Nike",
+  "model": "ZoomX Vaporfly Next%",
+  "description": "The Nike ZoomX Vaporfly Next% is a high-performance running shoe, designed for speed.",
+  "price": 250,
+  "image": "https://www.misterrunning.com/images/2024-media-03/nike-zoomx-vaporfly-next-3-scarpe-running-donna-coconut-milk-fv3634-181_A.jpg",
+  "categories": [
+    "Running",
+    "Men"
+  ],
+  "sizes": [
+    {
+      "size": "39",
+      "amount": 12,
+      "_id": "66d77ac08f31e09406eed890"
+    },
+    {
+      "size": "40",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed891"
+    },
+    {
+      "size": "41",
+      "amount": 20,
+      "_id": "66d77ac08f31e09406eed892"
+    },
+    {
+      "size": "42",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed893"
+    },
+    {
+      "size": "43",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed894"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed88f",
+  "__v": 0
+}

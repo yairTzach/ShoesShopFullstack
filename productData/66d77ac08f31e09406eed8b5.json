@@ -1,0 +1,45 @@
+{
+  "brand": "New Balance",
+  "model": "574",
+  "description": "The New Balance 574 is a classic sneaker with a timeless design.",
+  "price": 80,
+  "image": "https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/w/4/w413200031-11713950133.jpg",
+  "categories": [
+    "Casual",
+    "Women"
+  ],
+  "sizes": [
+    {
+      "size": "36",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed8b6"
+    },
+    {
+      "size": "37",
+      "amount": 18,
+      "_id": "66d77ac08f31e09406eed8b7"
+    },
+    {
+      "size": "38",
+      "amount": 25,
+      "_id": "66d77ac08f31e09406eed8b8"
+    },
+    {
+      "size": "39",
+      "amount": 15,
+      "_id": "66d77ac08f31e09406eed8b9"
+    },
+    {
+      "size": "40",
+      "amount": 20,
+      "_id": "66d77ac08f31e09406eed8ba"
+    },
+    {
+      "size": "41",
+      "amount": 10,
+      "_id": "66d77ac08f31e09406eed8bb"
+    }
+  ],
+  "_id": "66d77ac08f31e09406eed8b5",
+  "__v": 0
+}

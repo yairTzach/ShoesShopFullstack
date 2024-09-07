@@ -115,38 +115,37 @@ shoeshop/
 3. Open your terminal application (on Windows, you can use Command Prompt or PowerShell; on macOS and Linux, you can use the Terminal app).
 4. In the terminal, use the `cd` (change directory) command to navigate to the extracted project folder:
 
-# Step 2: Install Dependencies
+## Step 2: Install Dependencies
 Once you are inside the project folder in the terminal, run the following command to install all the necessary dependencies:
 npm install
 
-# Step 3: Start the Application
+## Step 3: Start the Application
 To start the application, run the following command in the terminal:
 node server.js
 
-# The app should now be running on http://localhost:3000/html/main.html
+## The app should now be running on http://localhost:3000/html/main.html
 
 
-# Running Tests
+## Running Tests
 
-# How to Run Tests:
-# 1. Ensure your MongoDB server is running. If it's not running, you'll need to start it first.
-# 2. If your application is already running in one terminal, open a new terminal window or tab.
-# 3. Navigate to the public/js/test directory where the test file is located:
+## How to Run Tests:
+## 1. Ensure your MongoDB server is running. If it's not running, you'll need to start it first.
+## 2. If your application is already running in one terminal, open a new terminal window or tab.
+## 3. Navigate to the public/js/test directory where the test file is located:
 
 cd /path/to/your/project/public/js/test
 
-# 4. Install the necessary dependencies for running the tests:
+## 4. Install the necessary dependencies for running the tests:
 
 npm install
 
-# 5. Finally, run the test script using the following command:
+## 5. Finally, run the test script using the following command:
 
 node test.js
 
-# This script will execute tests for your routes and functionalities to ensure everything is working correctly. 
-# If the tests pass, you will see output in the terminal indicating success. If any test fails, the output will show 
-# which test failed and the type of error.
+## This script will execute tests for your routes and functionalities to ensure everything is working correctly. 
+## If the tests pass, you will see output in the terminal indicating success. If any test fails, the output will show 
+## which test failed and the type of error.
 
-## Project Logo
 
 ![Project Logo](logo.webp)

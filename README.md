@@ -102,6 +102,7 @@ shoeshop/
 ├── package.json            
 └── READMEinstructions.html               
 
+```
 ## Installation & Setup
 
 ### Prerequisites

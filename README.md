@@ -123,15 +123,13 @@ npm install
 To start the application, run the following command in the terminal:
 node server.js
 
-## The app should now be running on http://localhost:3000/html/main.html
+ The app should now be running on http://localhost:3000/html/main.html
 
-
-## Running Tests
 
 ## How to Run Tests:
-## 1. Ensure your MongoDB server is running. If it's not running, you'll need to start it first.
-## 2. If your application is already running in one terminal, open a new terminal window or tab.
-## 3. Navigate to the public/js/test directory where the test file is located:
+ 1. Ensure your MongoDB server is running. If it's not running, you'll need to start it first.
+ 2. If your application is already running in one terminal, open a new terminal window or tab.
+ 3. Navigate to the public/js/test directory where the test file is located:
 
 cd /path/to/your/project/public/js/test
 
@@ -143,9 +141,9 @@ npm install
 
 node test.js
 
-## This script will execute tests for your routes and functionalities to ensure everything is working correctly. 
-## If the tests pass, you will see output in the terminal indicating success. If any test fails, the output will show 
-## which test failed and the type of error.
+ This script will execute tests for your routes and functionalities to ensure everything is working correctly. 
+ If the tests pass, you will see output in the terminal indicating success. If any test fails, the output will show 
+ which test failed and the type of error.
 
 
 ![Project Logo](logo.webp)

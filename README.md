@@ -132,6 +132,8 @@ node server.js
  Password: admin
  It is recommended to change the default admin credentials after the first login inside the profile section - **Profile page URL:** `http://localhost:3000/html/profile.html`
 
+
+
 ## How to Run Tests:
  1. Ensure your MongoDB server is running. If it's not running, you'll need to start it first.
  2. If your application is already running in one terminal, open a new terminal window or tab.

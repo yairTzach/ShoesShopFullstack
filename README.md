@@ -126,7 +126,6 @@ node server.js
  The app should now be running on http://localhost:3000/html/main.html
 
 ## Admin Account Setup
-
  Upon initial startup, an admin account is automatically created to facilitate immediate access to administrative features.
  Username: admin
  Password: admin

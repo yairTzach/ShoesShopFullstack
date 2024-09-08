@@ -125,6 +125,12 @@ node server.js
 
  The app should now be running on http://localhost:3000/html/main.html
 
+ ##Admin Account Setup
+
+ Upon initial startup, an admin account is automatically created to facilitate immediate access to administrative features.
+ Username: admin
+ Password: admin
+ It is recommended to change the default admin credentials after the first login inside the profile section - **Profile page URL:** `http://localhost:3000/html/profile.html`
 
 ## How to Run Tests:
  1. Ensure your MongoDB server is running. If it's not running, you'll need to start it first.

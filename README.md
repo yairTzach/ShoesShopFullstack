@@ -153,4 +153,3 @@ node test.js
  which test failed and the type of error.
 
 
-![Project Logo](logo.webp)
